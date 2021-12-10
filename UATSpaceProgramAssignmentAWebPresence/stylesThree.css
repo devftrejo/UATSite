@@ -1,0 +1,92 @@
+/* This is how to comment in CSS. */
+/* This is a CSS External Style Sheet.*/
+/* Fernando Trejo's Assignment "JS DOM and Doc Structure with Tables, Themes, and Mock Data". */
+/* Everything in stylesThree.css is styling the UATSpaceProgram.html document only. */
+/* To style the header.*/
+header {
+    display: block;
+    background-color: black;
+    border-style: solid;
+    border-color: gray;
+}
+/* To style the Nav Bar.*/
+
+body {margin: 0;}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    border-style: solid;
+    border-color: gray;
+}
+
+ul.topnav li {
+    float: left;
+    border-right: 1px solid aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* To change the link color to black on hover except the active page. */
+ul.topnav li a:hover:not(.active) {background-color:gray;}
+
+ul.topnav li a.active {background-color:dodgerblue;}
+
+@media screen and (max-width: 600px) {
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+/* To style the main tag.*/
+/* The width and height adjust the size of the main so that it fills in the screen.*/
+main {
+    margin: 0;
+    padding: 5px;
+    min-height: 100vh;
+}
+body {
+    background-image: url("Images/planet.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* To place an image in the background. */
+}
+/* To style the text in the h1 tag. */
+/* To style the h1 tag with google fonts include the font family from google fonts.*/
+h1 {
+    font-family: 'Big Shoulders Stencil Display', sans-serif;
+    color: white;
+    font-size: xx-large;
+    text-shadow: 2px 2px 5px lightskyblue;
+}
+/* The element to apply the animation to, in this case the image. */
+img {
+    border-radius: 50%;
+    width: max-content;
+    height: max-content;
+    position: relative;
+    background-color:white;
+}
+/* To style all h6 tags.*/
+h6 {
+    color: aliceblue;
+    text-align: left;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* To style the footer.*/
+footer {
+    display: block;
+    background-color: black;
+    border-style: solid;
+    border-color: gray;
+}

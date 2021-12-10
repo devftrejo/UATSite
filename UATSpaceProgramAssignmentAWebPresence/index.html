@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--All HTML documents must start with a document type declaration, in this case an HTML5 declaration.
+  It represents the document type, and helps browsers display web pages correctly.
+-->
+
+<!-- Fernando Trejo's Assignment Mission Control Operator Login. -->
+
+<!-- This is how to comment in HTML. -->
+<html lang="en">
+  <!--The HTML document begins with HTML tags and ends with them.-->
+  <head>
+    <!--To display a web page correctly,
+      a web browser must know the character set used in the page.
+      In this case it is displayed in the meta tag (charset attribute).
+      The other meta tags are setting the display for the user interface.
+    -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--title tag displays the title text in the browser's tab.-->
+    <title>UAT Space Program Mission Control Operator Login</title>
+    <!--This is how you link a JS and CSS external document(s) to your HTML document(s).-->
+    <script src="CodeOne.js"></script>
+    <link rel="stylesheet" href="stylesOne.css" />
+    <!--This is how to link the w3.css framework to your HTML Document(s).-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <!--The visible part of an HTML document is contained in the body tags.-->
+  <body>
+    <!--The header element represents a container for introductory content or a set of navigational links.-->
+    <header>
+      <h6>Posted by Fernando Trejo, Student</h6>
+      <h6>Enter your three digit password.</h6>
+    </header>
+    <!--HTML with CSS styling Nav Bar, see stylesTwo.css.-->
+    <!--The class active is to let the user know which page they are on.-->
+    <!--The class topnav makes the Nav Bar responsive.-->
+    <ul class="topnav">
+      <li><a class="active" href="index.html">Login</a></li>
+      <li><a href="#denied">Blastoff App</a></li>
+      <li><a href="#denied">Blastoff Data</a></li>
+      <li><a href="#denied">Game</a></li>
+      <li><a href="#denied">UAT Boards Objectives</a></li>
+      <li><a href="https://www.uat.edu/about-uat">About UAT</a></li>
+    </ul>
+    <!--The main tag specifies the main content of the document.-->
+    <main>
+      <!--HTML center tag to center anything in the body, (Use CSS for text if centering text only).-->
+      <center>
+        <!--Image tag with source to display an image.
+          The alt is a description of the image for the disabled.
+          contains width and height to adjust the size of the image.
+        -->
+        <img src="Images/UATspaceLogo-2.jpg" alt="UAT Mission 3 Space Program Logo" />
+        <!--HTML heading tags define headings,
+          and h1 is the most important to h6 being the least important.
+          They also generate different sizes of text for headings.
+        -->
+        <h1>Mission Control Operator Login</h1>
+        <!--Break tag to create spacing verticaly.-->
+        <br>
+        <!--W3.CSS Login Modal from w3.css framework.-->
+        <!--Contains some internal CSS styles and internal JS, this is w3.css's framework design and code modified by me. -->
+        <!--A div tag with class container.-->
+        <div class="w3-container">
+          <!--The login button to open the form.-->
+          <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-white w3-border w3-border-aqua w3-round-large">Login</button>
+          <!--A div tag with id and modal class, the form is nested in the modal.-->
+          <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+              <div class="w3-center"><br>
+                <!--The "x" button in the top right corner of the modal to close the modal when clicked.-->
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+              </div>
+              <!--The actual form starts here.-->
+              <form class="w3-container" action="/action_page.php" id="credSubmit" onsubmit="return false">
+                <div class="w3-section">
+                  <!--P tag to display the login status for the user's input.-->
+                  <p id="loginStatus" class="loginID">Status of login...</p>
+                  <!--A label to display what input is requested from the user.-->
+                  <label><b>First Name</b></label>
+                  <!--The row where the user enters the input requested, then is analyzed on submit.-->
+                  <!--Labels and Rows are the same for the Last Name and Badge Number.-->
+                  <input class="w3-input w3-border w3-margin-bottom" type="text" id="firstName" placeholder="Enter First Name" name="firstname" required>
+                  <label><b>Last Name</b></label>
+                  <input class="w3-input w3-border w3-margin-bottom" type="text" id="lastName" placeholder="Enter Last Name" name="lastname" required>
+                  <label><b>Badge Number</b></label>
+                  <input class="w3-input w3-border" type="password" id="badgeNumber" placeholder="Enter Badge Number" name="psw" required>
+                  <!--The Login button which the user clicks to submit the requested input for analysis.-->
+                  <button class="w3-button w3-block w3-aqua w3-section w3-padding" type="submit" onclick="checkCreds();">Login</button>
+                </div>
+              </form>
+              <!--Another w3.css container.-->
+              <div class="w3-container w3-border-top w3-padding-16 w3-gray">
+                <!--Button to cancel submission and will also exit the modal.-->
+                <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </center>
+    </main>
+    <!--The footer tag defines a footer for a document or section.-->
+    <footer>
+      <h6>College: University of Advancing Technology (UAT)<br>
+        <a href="https://www.uat.edu/">Link: https://www.uat.edu/</a><br>
+        Physical Address:<br>
+        2625 West Baseline Road<br>
+        Tempe, Arizona 85283
+      </h6>
+    </footer>
+  </body>
+</html>

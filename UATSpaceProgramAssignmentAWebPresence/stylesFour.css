@@ -1,0 +1,100 @@
+/* This is how to comment in CSS. */
+/* Fernando Trejo's Assignment Free Craps Game. */
+/* Everything in stylesFour.css is styling the Game.html document only. */
+/* To style the header.*/
+header {
+  display: block;
+  background-color: cyan;
+  border-style: solid;
+  border-color: aliceblue;
+}
+/* To style the Nav Bar.*/
+
+body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: gray;
+  border-style: solid;
+  border-color: aliceblue;
+}
+
+ul.topnav li {
+  float: left;
+  border-right: 1px solid aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* To change the link color to black on hover except the active page. */
+ul.topnav li a:hover:not(.active) {background-color:black;}
+
+ul.topnav li a.active {background-color:aqua;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+/* To style the main tag.*/
+/* The width and height adjust the size of the main so that it fills in the screen.*/
+main {
+  margin: 0;
+  padding: 5px;
+  min-height: 100vh;
+}
+body {
+  background-color: lightblue;
+}
+/* To style the h1, h2, and p tags.*/
+h1 {
+  color: royalblue;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  background-color: royalblue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* To style all h4 tags.*/
+h4 {
+  color: aliceblue;
+  text-align: left;
+  text-decoration: underline;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* To style the footer.*/
+footer {
+  display: block;
+  background-color: cyan;
+  border-style: solid;
+  border-color: aliceblue;
+}

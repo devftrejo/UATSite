@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--All HTML documents must start with a document type declaration, in this case an HTML5 declaration.
+  It represents the document type, and helps browsers display web pages correctly.
+-->
+<!-- Fernando Trejo's Assignment "JS DOM and Doc Structure with Tables, Themes, and Mock Data". -->
+<!-- This is how to comment in HTML. -->
+<html lang="en">
+  <!--The HTML document begins with HTML tags and ends with them.-->
+  <head>
+    <!--To display a web page correctly,
+      a web browser must know the character set used in the page.
+      In this case it is displayed in the meta tag (charset attribute).
+      The other meta tags are setting the display for the user interface.
+    -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--title tag displays the title text in the browser's tab.-->
+    <title>UAT Space Program</title>
+    <!--This is how you link a JS external document to your HTML document(s).-->
+    <script src="CodeTwo.js"></script>
+    <script src="dataLoader.js"></script>
+    <!--The script tag allows you to use JS in an HTML document, (Internal JS).-->
+    <script>
+      // JS Global variables.
+      var theTime = new Date();
+      var tempTime = new Date();
+      var time_interval = 5000;
+      var last_iteration = 0;
+      var running = true;
+      var index = 0;
+      var timer;
+      // Variable to load the data into the array.
+      var data = getData();
+      // JS Function to update the display.
+      function updateDisplay() {
+        theTime = new Date();
+        // Debugging.
+        console.log(
+          "Display : " +
+          (theTime.getHours() < 10 ? "0" + theTime.getHours() : theTime.getHours()) +
+          ":" + (theTime.getMinutes() < 10 ? "0" + theTime.getMinutes() : theTime.getMinutes()) +
+          ":" + (theTime.getSeconds() < 10 ? "0" + theTime.getSeconds() : theTime.getSeconds())
+        );
+        // To update the document(s).
+        var timeRead = data[index].time_seconds;
+        // Conditional Statements if else.
+        if (timeRead >= 10) {
+          // Document.get... to find an element by element id.
+          document.getElementById("data").rows["seconds"].innerHTML = dataRow("Time Elapsed", data[index].time_seconds, "seconds");
+          document.getElementById("data").rows["latitude"].innerHTML = dataRow("Latitude", data[index].latitude, " ");
+          document.getElementById("data").rows["longitude"].innerHTML = dataRow("Longitude", data[index].longitude, " ");
+          document.getElementById("data").rows["gps_altitude"].innerHTML = dataRow("GPS Altitude", data[index].gps_altitude, " ");
+          document.getElementById("data").rows["bmpSensor_altitude"].innerHTML = dataRow("BMP Sensor Altitude", data[index].bmpSensor_altitude, "");
+          document.getElementById("data").rows["bmpSensor_pressure"].innerHTML = dataRow("BMP Sensor Pressure", data[index].bmpSensor_pressure, "");
+          document.getElementById("data").rows["bmpSensor_temp"].innerHTML = dataRow("BMP Sensor Temperature", data[index].bmpSensor_temp, "");
+          document.getElementById("data").rows["digSensor_temp"].innerHTML = dataRow("Digital Sensor Temperature", data[index].digSensor_temp, "");
+          document.getElementById("data").rows["cssSensor_temp"].innerHTML = dataRow("CSS Sensor Temperature", data[index].cssSensor_temp, "");
+          document.getElementById("data").rows["cssSensor_eCO2"].innerHTML = dataRow("CSS Sensor eCO2", data[index].cssSensor_eCO2, "");
+          document.getElementById("data").rows["cssSensor_TVOC"].innerHTML = dataRow("CSS Sensor TVOC", data[index].cssSensor_TVOC, "");
+          document.getElementById("data").rows["UV"].innerHTML = dataRow("UV", data[index].UV, " ");
+          document.getElementById("data").rows["accelX"].innerHTML = dataRow("Accel X", data[index].accelX, " ");
+          document.getElementById("data").rows["accelY"].innerHTML = dataRow("Accel Y", data[index].accelY, " ");
+          document.getElementById("data").rows["accelZ"].innerHTML = dataRow("Accel Z", data[index].accelZ, " ");
+          document.getElementById("data").rows["magneticX"].innerHTML = dataRow("Magnetic X", data[index].magneticX, " ");
+          document.getElementById("data").rows["magneticY"].innerHTML = dataRow("Magnetic Y", data[index].magneticY, " ");
+          document.getElementById("data").rows["magneticZ"].innerHTML = dataRow("Magnetic Z", data[index].magneticZ, " ");
+          document.getElementById("data").rows["gyroX"].innerHTML = dataRow("Gyro X", data[index].gyroX, " ");
+          document.getElementById("data").rows["gyroY"].innerHTML = dataRow("Gyro Y", data[index].gyroY, " ");
+          document.getElementById("data").rows["gyroZ"].innerHTML = dataRow("Gyro Z", data[index].gyroZ, " ");
+
+          if (index < 499) {
+            index++;
+          } else {
+            index = 0;
+          }
+        }
+        document.getElementById("time").innerHTML = (theTime.getHours() < 10 ? "0" + theTime.getHours() : theTime.getHours()) + ":" + (theTime.getMinutes() < 10 ? "0" + theTime.getMinutes() : theTime.getMinutes()) + ":" + (theTime.getSeconds() < 10 ? "0" + theTime.getSeconds() : theTime.getSeconds());
+      }
+      // The purpose of this function is to enable/disable the start button and start the timer.
+      // .disabled boolean will keep the stop button disabled until the start button is clicked and then disable the start button.
+      function start() {
+        // Document.get... to find an element by element id.
+        document.getElementById("data").rows["seconds"].innerHTML = "Reading data...";
+        index = 0;
+        timer = setInterval(updateDisplay, time_interval);
+        document.getElementById("startButton").disabled = true;
+        document.getElementById("stopButton").disabled = false;
+      }
+      // The purpose of this function is to enable/disable the stop button and stop the timer.
+      // .disabled boolean will keep the start button disabled until the stop button is clicked and then disable the stop button.
+      function stop() {
+        clearInterval(timer);
+        // Document.get... to find an element by element id.
+        document.getElementById("startButton").disabled = false;
+        document.getElementById("stopButton").disabled = true;
+      }
+    </script>
+    <link rel="stylesheet" href="stylesThree.css" />
+    <!--This is how to link your font awesome kit to your HTML Document(s) for icons.-->
+    <!--go to fontawesome.com to set up a free account and recieve your first kit.-->
+    <script src="https://kit.fontawesome.com/a7630a1f51.js" crossorigin="anonymous"></script>
+    <!--This is how to link the w3.css framework to your HTML Document(s).-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--This is how to link google fonts to your sites for font styling, see CSS external Style Sheet for use.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!--The header element represents a container for introductory content or a set of navigational links.-->
+    <header>
+      <h6>Posted by Fernando Trejo, Student</h6>
+    </header>
+    <!--HTML with CSS styling Nav Bar, see stylesTwo.css.-->
+    <!--The class active is to let the user know which page they are on.-->
+    <!--The class topnav makes the Nav Bar responsive.-->
+    <ul class="topnav">
+      <li><a href="index.html">Login</a></li>
+      <li><a href="CountdownApp.html">Blastoff App</a></li>
+      <li><a class="active" href="UATSpaceProgram.html">Blastoff Data</a></li>
+      <li><a href="Game.html">Game</a></li>
+      <li><a href="boardsObjectives.html">UAT Boards Objectives</a></li>
+      <li><a href="https://www.uat.edu/about-uat">About UAT</a></li>
+    </ul>
+    <!--The main tag specifies the main content of the document.-->
+    <main>
+      <!--The visible part of an HTML document is contained in the body tags.-->
+      <!--HTML center tag to center anything in the body, (Use CSS for text if centering text only).-->
+      <center>
+        <!--Image tag with source to display an image.
+          The alt is a description of the image for the disabled.
+          contains width and height to adjust the size of the image.
+        -->
+        <img src="Images/UATspaceLogo-2.jpg" alt="UAT Mission 3 Space Program Logo" />
+        <!--HTML heading tags define headings,
+          and h1 is the most important to h6 being the least important.
+          They also generate different sizes of text for headings.
+        -->
+        <h1>UAT Space Program.</h1>
+        <!--w3.css responsive table.-->
+        <!--w3.css contains a good example of CSS Inline Styling. This document does not contain CSS Internal Styling, to do that you use the <style></style> tags and nest your CSS Code into them just like the JS Internal example above.-->
+        <div class="w3-container">
+          <div class="w3-responsive">
+            <table id="data" class="w3-table-all w3-card-4 w3-hoverable w3-large" style="width: fit-content;">
+              <tr class="w3-blue">
+                <th>Data Type</th>
+                <th>Reading</th>
+              </tr>
+              <tr id="seconds"><td>Time Elapsed:</td><td>0</td></tr>
+              <tr id="latitude"><td>Latitude:</td><td>0</td></tr>
+              <tr id="longitude"><td>Longitude:</td><td>0</td></tr>
+              <tr id="gps_altitude"><td>GPS Altitude:</td><td>0</td></tr>
+              <tr id="bmpSensor_altitude"><td>BMP Sensor Altitude:</td><td>0</td></tr>
+              <tr id="bmpSensor_pressure"><td>BMP Sensor Pressure:</td><td>0</td></tr>
+              <tr id="bmpSensor_temp"><td>BMP Sensor Temperature:</td><td>0</td></tr>
+              <tr id="digSensor_temp"><td>Digital Sensor Temperature:</td><td>0</td></tr>
+              <tr id="cssSensor_temp"><td>CSS Sensor Temperature:</td><td>0</td></tr>
+              <tr id="cssSensor_eCO2"><td>CSS Sensor eCO2:</td><td>0</td></tr>
+              <tr id="cssSensor_TVOC"><td>CSS Sensor TVOC:</td><td>0</td></tr>
+              <tr id="UV"><td>UV:</td><td>0</td></tr>
+              <tr id="accelX"><td>Accel X:</td><td>0</td></tr>
+              <tr id="accelY"><td>Accel Y:</td><td>0</td></tr>
+              <tr id="accelZ"><td>Accel Z:</td><td>0</td></tr>
+              <tr id="magneticX"><td>Magnetic X:</td><td>0</td></tr>
+              <tr id="magneticY"><td>Magnetic Y:</td><td>0</td></tr>
+              <tr id="magneticZ"><td>Magnetic Z:</td><td>0</td></tr>
+              <tr id="gyroX"><td>Gyro X:</td><td>0</td></tr>
+              <tr id="gyroY"><td>Gyro Y:</td><td>0</td></tr>
+              <tr id="gyroZ"><td>Gyro Z:</td><td>0</td></tr>
+            </table>
+          </div>
+        </div>
+        <!--a br tag to add a break, or spacing.-->
+        <br>
+        <br>
+        <!--button tag to create a button.
+          Onclick is JS to make an event occur, in this case to make the button work when clicked by the user.
+        -->
+        <!--The HTML Class Attribute is used to specify a class for an HTML element.
+          Is often used to point to a class name in CSS.
+        -->
+        <!--the id attribute is used to specify a unique id for an HTML element.-->
+        <!-- i class is for the icon to be displayed by your font awesome kit.-->
+        <button onclick="start();" class="w3-button w3-circle w3-xxxlarge w3-green" id="startButton" value="Start"><i class="fas fa-rocket"></i></button>
+        <button class="w3-button w3-circle w3-xxxlarge w3-red" onclick="stop();" id="stopButton" value="Stop" disabled="true"><i class="far fa-hand-spock"></i></button>
+        <br>
+        <br>
+        <br>
+        <!-- Another w3.css responsive table.-->
+        <div class="w3-container">
+          <div class="w3-responsive">
+            <table class="w3-table-all w3-centered w3-card-4 w3-hoverable w3-large" style="width: fit-content;">
+              <tr class="w3-blue">
+                <th>The Time Is:</th>
+              </tr>
+              <tr id="time"><td>0</td></tr>
+            </table>
+          </div>
+        </div>
+        <br>
+        <br>
+        <!--The Audio element is used to play an audio file.-->
+        <!--The Controls attribute adds audio controls.
+          The Source element allows you to specify alternative audio files for the browser to choose from.
+          Text between audio tags is only displayed in browsers that do not support the audio element.
+        -->
+        <audio controls>
+          <source src="Audio/SimulationOfNasaRocketLaunch.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </center>
+    </main>
+    <!--The footer tag defines a footer for a document or section.-->
+    <footer>
+      <h6>College: University of Advancing Technology (UAT)<br>
+      <a href="https://www.uat.edu/">Link: https://www.uat.edu/</a></h6>
+    </footer>
+  </body>
+</html>

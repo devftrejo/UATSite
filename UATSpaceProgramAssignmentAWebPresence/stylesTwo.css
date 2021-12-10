@@ -1,0 +1,152 @@
+/* This is how to comment in CSS. */
+/* Fernando Trejo's Assignment Countdown App. */
+/* Everything in stylesTwo.css is styling the CountdownApp.html document only. */
+/* To style the header.*/
+header {
+    display: block;
+    background-color:dodgerblue;
+    border-style: solid;
+    border-color: aliceblue;
+}
+/* To style all h6 tags.*/
+h4 {
+    color: aliceblue;
+    text-align: left;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* To style the Nav Bar.*/
+
+body {margin: 0;}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+    border-style: solid;
+    border-color: aliceblue;
+}
+
+ul.topnav li {
+    float: left;
+    border-right: 1px solid aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* To change the link color to black on hover except the active page. */
+ul.topnav li a:hover:not(.active) {background-color:black;}
+
+ul.topnav li a.active {background-color:dodgerblue;}
+
+@media screen and (max-width: 600px) {
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+/* To style the main tag.*/
+/* The width and height adjust the size of the main so that it fills in the screen.*/
+main {
+    margin: 0;
+    padding: 5px;
+    min-height: 100vh;
+}
+/* The following animation code was obtained at the following link: https://www.w3schools.com/css/css3_animations.asp */
+/* The animation code. */
+/* Make sure the animation function name matches the animation-name inside the element's curly brackets. */
+@keyframes example {
+    from {background-color:white;}
+    to {background-color: gray;}
+}
+
+/* The element to apply the animation to, in this case the body element. */
+body {
+    background-color:white;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background-image: url("Images/Launch.jpg");
+    /* To place an image in the background. */
+}
+
+/* The animation code Two. */
+@keyframes exampleTwo {
+    0%   {left:0px; top:0px;}
+    50%  {left:20px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
+/* The element to apply the animation to, in this case the image. */
+img {
+    border-radius: 50%;
+    width: max-content;
+    height: max-content;
+    position: relative;
+    background-color:white;
+    animation-name: exampleTwo;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* To style the button.*/
+.button {
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 50%;
+    color: white;
+    padding: 32px 16px;
+    text-align: center;
+    display: inline-block;
+    font-size: 24px;
+    box-shadow: 0 9px black;
+}
+
+/* To add transition duration to the button hover when mouse is over button. */
+
+/* I made two .button styles for clarity and understanding, they should be combined. */
+.button {
+    transition-duration: 0.4s;
+}
+
+/* To add the hover effect when the mouse hovers over the button.*/
+.button:hover {
+    background-color: green;
+    color: white;
+}
+
+/* To add the pressed effect on click. */
+.button:active {
+    background-color: green;
+    box-shadow: 0 5px black;
+    transform: translateY(4px);
+}
+
+/* To style the text in the h1 and p tags. */
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    color: black;
+    font-size: xx-large;
+    text-shadow: 2px 2px 5px red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* To style the footer.*/
+footer {
+    display: block;
+    background-color: dodgerblue;
+    border-style: solid;
+    border-color: aliceblue;
+}

@@ -1,0 +1,91 @@
+/* This is how to comment in CSS. */
+/* Fernando Trejo's Assignment Mission Control Operator Login. */
+/* Everything in stylesOne.css is styling the index.html and boardsObjectives.html documents only. */
+/* To style the header.*/
+header {
+    display: block;
+    background-color: cyan;
+    border-style: solid;
+    border-color: aliceblue;
+}
+/* To style the Nav Bar.*/
+
+body {margin: 0;}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+    border-style: solid;
+    border-color: aliceblue;
+}
+
+ul.topnav li {
+    float: left;
+    border-right: 1px solid aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* To change the link color to black on hover except the active page. */
+ul.topnav li a:hover:not(.active) {background-color:black;}
+
+ul.topnav li a.active {background-color:aqua;}
+
+@media screen and (max-width: 600px) {
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+/* To style the main tag.*/
+/* The width and height adjust the size of the main so that it fills in the screen.*/
+main {
+    margin: 0;
+    padding: 5px;
+    background-color:white;
+    min-height: 100vh;
+}
+/* To style the Image.*/
+img {
+    border-radius: 50%;
+    width: max-content;
+    height: max-content;
+    position: relative;
+    background-color:white;
+}
+/* To style all h1 and h6 tags.*/
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+h6 {
+    color: aliceblue;
+    text-align: left;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* To style the footer.*/
+footer {
+    display: block;
+    background-color: cyan;
+    border-style: solid;
+    border-color: aliceblue;
+}
+/* Again I kept it seperate, although there is duplicates, for clarity. This is to style the main element with the article tag. This does not have much affect on the index.html, so I left it here rather than create another styleSheet. */
+main > h2, p, .browser {
+    margin: 10px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.browser {
+    background: aqua;
+}

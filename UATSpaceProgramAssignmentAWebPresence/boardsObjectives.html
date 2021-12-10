@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--All HTML documents must start with a document type declaration, in this case an HTML5 declaration.
+  It represents the document type, and helps browsers display web pages correctly.
+-->
+
+<!-- Fernando Trejo's Assignment UAT Boards Objectives. -->
+
+<!-- This is how to comment in HTML. -->
+<html lang="en">
+  <!--The HTML document begins with HTML tags and ends with them.-->
+  <head>
+    <!--To display a web page correctly,
+      a web browser must know the character set used in the page.
+      In this case it is displayed in the meta tag (charset attribute).
+      The other meta tags are setting the display for the user interface.
+    -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--title tag displays the title text in the browser's tab.-->
+    <title>UAT Boards Objectives</title>
+    <!--This is how you link a CSS external document(s) to your HTML document(s).-->
+    <link rel="stylesheet" href="stylesOne.css" />
+  </head>
+  <!--The visible part of an HTML document is contained in the body tags.-->
+  <body>
+    <!--The header element represents a container for introductory content or a set of navigational links.-->
+    <header>
+      <h6>Posted by Fernando Trejo, Student</h6>
+    </header>
+    <!--HTML with CSS styling Nav Bar, see stylesTwo.css.-->
+    <!--The class active is to let the user know which page they are on.-->
+    <!--The class topnav makes the Nav Bar responsive.-->
+    <ul class="topnav">
+      <li><a href="index.html">Login</a></li>
+      <li><a href="CountdownApp.html">Blastoff App</a></li>
+      <li><a href="UATSpaceProgram.html">Blastoff Data</a></li>
+      <li><a href="Game.html">Game</a></li>
+      <li><a class="active" href="boardsObjectives.html">UAT Boards Objectives</a></li>
+      <li><a href="https://www.uat.edu/about-uat">About UAT</a></li>
+    </ul>
+    <!--The main tag specifies the main content of the document.-->
+    <main>
+      <!--HTML center tag to center anything in the body, (Use CSS for text if centering text only).-->
+      <center>
+        <!--Image tag with source to display an image.
+          The alt is a description of the image for the disabled.
+          contains width and height to adjust the size of the image.
+        -->
+        <img src="Images/UATspaceLogo-2.jpg" alt="UAT Mission 3 Space Program Logo" />
+        <!--HTML heading tags define headings,
+          and h1 is the most important to h6 being the least important.
+          They also generate different sizes of text for headings.
+        -->
+        <h1>UAT Boards Objectives</h1>
+        <article class="browser">
+          <h2>UAT Advancing Computer Science Degree Objectives:</h2>
+          <p>1. Follow a software development process to analyze a problem, and to design, build and test software solutions.</p>
+          <p>2. Demonstrate software development skills using more than one programming language and development environment.</p>
+          <p>3. Implement data driven solutions.</p>
+          <p>4. Design and implement software solutions for mobile devices or embedded systems or multiple platforms.</p>
+          <p>5. Document the planning and development of software applications using industry-standard tools, techniques and processes.</p>
+          <p>6. Within software solutions describe, implement and analyze data structure techniques such as lists, trees, hash tables, graphs, along with sorting and searching algorithms.</p>
+        </article>
+      </center>
+    </main>
+    <!--The footer tag defines a footer for a document or section.-->
+    <footer>
+      <h6>College: University of Advancing Technology (UAT)<br>
+      <a href="https://www.uat.edu/">Link: https://www.uat.edu/</a></h6>
+    </footer>
+  </body>
+</html>
